@@ -25,6 +25,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.myapp.ui.theme.MyAppTheme
+import androidx.compose.ui.tooling.preview.Preview
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -79,5 +80,13 @@ fun AppToolbar() {
             color = Color.White,
             style = MaterialTheme.typography.titleLarge
         )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun AppScreenPreview() {
+    MyAppTheme {
+        AppScreen()
     }
 }

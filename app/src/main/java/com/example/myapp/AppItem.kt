@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun AppItem(
@@ -23,12 +24,12 @@ fun AppItem(
     modifier: Modifier = Modifier,
     onClick: () -> Unit = {}
 ) {
-    Row(
+    Column (
         modifier = modifier
             .fillMaxWidth()
             .clickable { onClick() }
             .padding(8.dp),
-        verticalAlignment = Alignment.CenterVertically
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
             painter = painterResource(id = app.iconRes),
@@ -39,15 +40,18 @@ fun AppItem(
         Column {
             Text(
                 text = app.name,
-                style = MaterialTheme.typography.titleMedium
+                style = MaterialTheme.typography.titleMedium,
+                fontSize = 14.sp
             )
             Text(
                 text = app.description,
-                style = MaterialTheme.typography.bodySmall
+                style = MaterialTheme.typography.bodySmall,
+                fontSize = 11.sp
             )
             Text(
                 text = app.category,
-                style = MaterialTheme.typography.labelSmall
+                style = MaterialTheme.typography.labelSmall,
+                fontSize = 10.sp
             )
         }
     }
